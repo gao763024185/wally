@@ -32,7 +32,7 @@
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!--生成映射文件存放位置-->
-        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="../wally-mapper/src/main/resources/" >
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="../wally-dao/src/main/resources/" >
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!--生成Dao类存放位置-->
@@ -41,7 +41,13 @@
         </javaClientGenerator>
         <!--生成对应表及类名-->
 
-        <table tableName="book"  domainObjectName="BookDO" enableCountByExample="false"
+        <table tableName="base_menu"  domainObjectName="BaseMenuDO" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"></table>
+        <table tableName="base_user"  domainObjectName="BaseUserDO" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"></table>
+        <table tableName="ssm_logs"  domainObjectName="SsmLogsDO" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
 

@@ -1,6 +1,7 @@
 package com.spb.wally;
 
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -16,6 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * main----负责启动引导应用程序
  */
 @SpringBootApplication
+@MapperScan("com.spb.wally.mapper")
 public class WallyWebApplication {
 
     public static void main(String[] args) {
