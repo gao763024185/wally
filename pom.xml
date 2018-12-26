@@ -16,7 +16,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>wally-dao</module>
-        <!--<module>wally-manager</module>-->
+        <module>wally-manager</module>
         <module>wally-domain</module>
         <module>wally-service</module>
         <module>wally-web</module>
