@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 作用：
+ * @description 作用：
  * 1、配置（主要的Spring配置类）
  * 2、启动引导类
  * '@SpringBootApplication' 开启了Spring的组件扫描和Spring Boot的自动配置
@@ -15,6 +15,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * --'@ComponentScan'：启用组件扫描
  * --'@EnableAutoConfiguration'	：开启了Spring Boot自动配置的魔力
  * main----负责启动引导应用程序
+ * @author: gaobh
+ * @date: 2018/12/26
+ * @version: v1.0
  */
 @SpringBootApplication
 @MapperScan("com.spb.wally.mapper")

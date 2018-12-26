@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!--日志级别-->
+    <!--TRACE < DEBUG < INFO < WARN < ERROR < FATAL-->
+    <!-- 彩色日志属性 -->
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%red(%date{MM-dd HH:mm:ss.SSS}) -- %green([%thread]) --  %highlight(%-5level) %blue(%logger) --%yellow([%L]) -- (%msg%n) "/>
+
+    <!--输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!--输出到文件-->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/logs/</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logback.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <!--执行时间-->
+    <appender name="EXECUTE_TIME" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${user.home}/logs/wally/executeTime.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${user.home}/logs/wally/executeTime.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>3</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.spb.wally.mapper" level="debug"/>
+
+    <root level="info">
+        <appender-ref ref="console"/>
+        <!--<appender-ref ref="file"/>-->
+    </root>
+
+</configuration>

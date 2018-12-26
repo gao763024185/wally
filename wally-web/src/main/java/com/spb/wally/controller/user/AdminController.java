@@ -1,6 +1,7 @@
 package com.spb.wally.controller.user;
 
 import com.spb.wally.service.UserInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/admin")
+@Slf4j
 public class AdminController {
 
     @Resource
@@ -21,8 +23,14 @@ public class AdminController {
 
     @RequestMapping("/login")
     public String loginVal() {
+        log.info("我是info");
+        log.warn("我是warn");
+        log.error("我是error");
         return userInfoService.print();
     }
-
+    @RequestMapping("/index")
+    public String index() {
+        return "index";
+    }
 
 }
