@@ -4,6 +4,7 @@ package com.spb.wally;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * @description 作用：
@@ -21,6 +22,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("com.spb.wally.mapper")
+//@ImportResource({"classpath:sign-config.xml"})
 public class WallyWebApplication {
 
     public static void main(String[] args) {
