@@ -17,7 +17,7 @@
 
         <!--数据库链接地址账号密码-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/ssm"
+                        connectionURL="jdbc:mysql://localhost:3306/wally"
                         userId="root"
                         password="">
         </jdbcConnection>
@@ -41,13 +41,13 @@
         </javaClientGenerator>
         <!--生成对应表及类名-->
 
-        <table tableName="base_menu"  domainObjectName="BaseMenuDO" enableCountByExample="false"
+        <table tableName="wa_base_menu"  domainObjectName="BaseMenuDO" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
-        <table tableName="base_user"  domainObjectName="BaseUserDO" enableCountByExample="false"
+        <table tableName="wa_base_user"  domainObjectName="BaseUserDO" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
-        <table tableName="ssm_logs"  domainObjectName="SsmLogsDO" enableCountByExample="false"
+        <table tableName="wa_logs"  domainObjectName="LogsDO" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
 

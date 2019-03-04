@@ -1,10 +1,12 @@
 package com.spb.wally.service.impl;
 
+import com.spb.wally.domain.entity.BaseUserDO;
 import com.spb.wally.mapper.BaseUserMapper;
 import com.spb.wally.service.UserInfoService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 /**
@@ -19,7 +21,5 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Resource
     private BaseUserMapper baseUserMapper;
     @Override
-    public String print() {
-        return baseUserMapper.selectByPrimaryKey(1).getUserName();
-    }
+    public List<BaseUserDO> findAll(){ return baseUserMapper.findAll();}
 }

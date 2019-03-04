@@ -1,103 +1,106 @@
 package com.spb.wally.domain.entity;
 
+import java.util.Date;
 import lombok.Data;
 
-import java.util.Date;
-
-
-/**
- * @description 用户信息实体类
- * @author: gaobh
- * @date: 2018/12/26 9:24
- * @version: v1.0
- */
 @Data
 public class BaseUserDO {
     /**
      * <pre>
-     *
-     * 表字段 : base_user.id
+     * 
+     * 表字段 : wa_base_user.id
      * </pre>
+     * 
      */
     private Integer id;
 
     /**
      * <pre>
      * 用户名称
-     * 表字段 : base_user.user_name
+     * 表字段 : wa_base_user.user_name
      * </pre>
+     * 
      */
     private String userName;
 
     /**
      * <pre>
      * 密码
-     * 表字段 : base_user.password
+     * 表字段 : wa_base_user.password
      * </pre>
+     * 
      */
     private String password;
 
     /**
      * <pre>
      * 登陆时间
-     * 表字段 : base_user.login_time
+     * 表字段 : wa_base_user.login_time
      * </pre>
+     * 
      */
     private Date loginTime;
 
     /**
      * <pre>
      * 头像地址
-     * 表字段 : base_user.avatar
+     * 表字段 : wa_base_user.user_avatar
      * </pre>
+     * 
      */
-    private String avatar;
+    private String userAvatar;
 
     /**
      * <pre>
      * 头像缩略图
-     * 表字段 : base_user.avatarThumbnail
+     * 表字段 : wa_base_user.avatar_thumbnail
      * </pre>
+     * 
      */
-    private String avatarthumbnail;
+    private String avatarThumbnail;
 
     /**
      * <pre>
      * 创建人
-     * 表字段 : base_user.creator
+     * 表字段 : wa_base_user.creator
      * </pre>
+     * 
      */
     private Integer creator;
 
     /**
      * <pre>
      * 创建时间
-     * 表字段 : base_user.gmt_create
+     * 表字段 : wa_base_user.gmt_create
      * </pre>
+     * 
      */
     private Date gmtCreate;
 
     /**
      * <pre>
      * 修改人
-     * 表字段 : base_user.modifier
+     * 表字段 : wa_base_user.modifier
      * </pre>
+     * 
      */
     private Integer modifier;
 
     /**
      * <pre>
      * 修改时间
-     * 表字段 : base_user.gmt_modified
+     * 表字段 : wa_base_user.gmt_modified
      * </pre>
+     * 
      */
     private Date gmtModified;
 
     /**
      * <pre>
      * 是否删除{0:未删除,1:删除}
-     * 表字段 : base_user.is_deleted
+     * 表字段 : wa_base_user.is_deleted
      * </pre>
+     * 
      */
     private Integer isDeleted;
 }

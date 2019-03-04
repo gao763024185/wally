@@ -2,10 +2,12 @@ package com.spb.wally.mapper;
 
 import com.spb.wally.domain.entity.BaseMenuDO;
 
+import java.util.List;
+
 /**
- * @description 目录
+ * @description 菜单
  * @author: gaobh
- * @date: 2018/12/26 9:24
+ * @date: 2019/01/31
  * @version: v1.0
  */
 public interface BaseMenuMapper {
@@ -20,4 +22,6 @@ public interface BaseMenuMapper {
     int updateByPrimaryKeySelective(BaseMenuDO record);
 
     int updateByPrimaryKey(BaseMenuDO record);
+
+    List<BaseMenuDO> findAll();
 }

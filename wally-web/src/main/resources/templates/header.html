@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="header">
+<header>
+    <div class="navbar-fixed">
+        <nav class="index-nav">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/index/?pageNum=1">
+                        <img src="/images/crainnogao.png" alt="">
+                    </a>
+                    <ul class="right hide-on-med-and-down" th:each="menu : ${indexModel.menuList}">
+                        <li th:if="${menu.menuType}==0 or ${menu.menuType}==2"><a th:href="${menu.menuUrl}"
+                                                                                  th:text="${menu.menuName}">${menu.menuName}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+</body>
+</html>

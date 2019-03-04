@@ -1,5 +1,9 @@
 package com.spb.wally.service;
 
+import com.spb.wally.domain.entity.BaseUserDO;
+
+import java.util.List;
+
 /**
  * @description 用户相关服务类
  * @author: gaobh
@@ -7,5 +11,10 @@ package com.spb.wally.service;
  * @version: v1.0
  */
 public interface UserInfoService {
-    String print();
+    /**
+     * 输出所有用户（哈哈 就我一人儿）
+     *
+     * @return
+     */
+    List<BaseUserDO> findAll();
 }

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spb.wally.mapper.LogsMapper" >
+  <resultMap id="BaseResultMap" type="com.spb.wally.domain.entity.LogsDO" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="log_title" property="logTitle" jdbcType="VARCHAR" />
+    <result column="log_summary" property="logSummary" jdbcType="VARCHAR" />
+    <result column="log_content" property="logContent" jdbcType="VARCHAR" />
+    <result column="count" property="count" jdbcType="INTEGER" />
+    <result column="creator" property="creator" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="INTEGER" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <result column="is_deleted" property="isDeleted" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, log_title, log_summary, log_content, count, creator, gmt_create, modifier, gmt_modified, 
+    is_deleted
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from wa_logs
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from wa_logs
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.spb.wally.domain.entity.LogsDO" >
+    insert into wa_logs (id, log_title, log_summary, 
+      log_content, count, creator, 
+      gmt_create, modifier, gmt_modified, 
+      is_deleted)
+    values (#{id,jdbcType=VARCHAR}, #{logTitle,jdbcType=VARCHAR}, #{logSummary,jdbcType=VARCHAR}, 
+      #{logContent,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER}, #{creator,jdbcType=INTEGER}, 
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{modifier,jdbcType=INTEGER}, #{gmtModified,jdbcType=TIMESTAMP}, 
+      #{isDeleted,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.spb.wally.domain.entity.LogsDO" >
+    insert into wa_logs
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="logTitle != null" >
+        log_title,
+      </if>
+      <if test="logSummary != null" >
+        log_summary,
+      </if>
+      <if test="logContent != null" >
+        log_content,
+      </if>
+      <if test="count != null" >
+        count,
+      </if>
+      <if test="creator != null" >
+        creator,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="logTitle != null" >
+        #{logTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="logSummary != null" >
+        #{logSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="logContent != null" >
+        #{logContent,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null" >
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=INTEGER},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.spb.wally.domain.entity.LogsDO" >
+    update wa_logs
+    <set >
+      <if test="logTitle != null" >
+        log_title = #{logTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="logSummary != null" >
+        log_summary = #{logSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="logContent != null" >
+        log_content = #{logContent,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null" >
+        creator = #{creator,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=INTEGER},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted = #{isDeleted,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.spb.wally.domain.entity.LogsDO" >
+    update wa_logs
+    set log_title = #{logTitle,jdbcType=VARCHAR},
+      log_summary = #{logSummary,jdbcType=VARCHAR},
+      log_content = #{logContent,jdbcType=VARCHAR},
+      count = #{count,jdbcType=INTEGER},
+      creator = #{creator,jdbcType=INTEGER},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=INTEGER},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      is_deleted = #{isDeleted,jdbcType=TINYINT}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="logsCount" resultType="java.lang.Integer">
+    SELECT count(0) FROM wa_logs
+  </select>
+
+
+  <select id="getLogsByQuery" resultMap="BaseResultMap" parameterType="com.spb.wally.domain.query.LogsQuery">
+    SELECT *FROM wa_logs
+    order by id DESC
+    <if test="offset != null and pageSize != null and offset &gt;= 0 and pageSize &gt;= 0">
+      limit #{offset},#{pageSize}
+    </if>
+  </select>
+</mapper>

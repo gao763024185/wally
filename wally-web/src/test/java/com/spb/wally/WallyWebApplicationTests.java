@@ -23,7 +23,6 @@ public class WallyWebApplicationTests {
 
     @Test
     public void contextLoads() {
-        System.out.println(userInfoService.print());
         System.out.println(baseUserMapper.selectByPrimaryKey(1).getPassword());
     }
 

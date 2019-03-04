@@ -2,12 +2,8 @@ package com.spb.wally.mapper;
 
 import com.spb.wally.domain.entity.BaseUserDO;
 
-/**
- * @description 用户信息
- * @author: gaobh
- * @date: 2018/12/26 9:24
- * @version: v1.0
- */
+import java.util.List;
+
 public interface BaseUserMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -20,4 +16,10 @@ public interface BaseUserMapper {
     int updateByPrimaryKeySelective(BaseUserDO record);
 
     int updateByPrimaryKey(BaseUserDO record);
+
+    /**
+     * 查出所有的登陆列表
+     * @return
+     */
+    List<BaseUserDO> findAll();
 }
