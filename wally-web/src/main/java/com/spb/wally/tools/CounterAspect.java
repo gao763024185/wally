@@ -1,4 +1,4 @@
-package com.spb.wally.utils;
+package com.spb.wally.tools;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -22,8 +22,18 @@ public class CounterAspect {
     @Resource
     ServletContext context;
 
+    /**
+     * 利用注解实现切点
+     */
     @Pointcut("@annotation(LogCount)")
     public void logCount() {
+    }
+
+    /**
+     * 利用需要使用切面的类方法的路径名称实现切点
+     */
+    @Pointcut("execution(* com.spb.wally.controller.LogsInfoController.detail(..))")
+    public void count() {
     }
 
     /**

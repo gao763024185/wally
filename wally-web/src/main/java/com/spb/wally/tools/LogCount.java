@@ -1,4 +1,4 @@
-package com.spb.wally.utils;
+package com.spb.wally.tools;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -5,7 +5,7 @@ import com.spb.wally.domain.entity.BaseMenuDO;
 import com.spb.wally.domain.entity.LogsDO;
 import com.spb.wally.service.BaseMenuService;
 import com.spb.wally.service.LogsService;
-import com.spb.wally.utils.LogCount;
+import com.spb.wally.tools.LogCount;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
