@@ -25,14 +25,12 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/")
-public class LogsInfoController {
+public class LogsInfoController extends BaseController{
 
     @Resource
     private LogsService logsService;
     @Resource
     ServletContext context;
-    @Resource
-    private BaseMenuService baseMenuService;
 
     /**
      * 日志详情页
@@ -44,10 +42,9 @@ public class LogsInfoController {
     @LogCount
     @RequestMapping("/detail")
     public ModelAndView detail(ModelMap modelMap, @RequestParam(value = "logId") String logId) {
+        super.getMenuList(modelMap);
         LogsDO logs = logsService.getById(logId);
         modelMap.addAttribute("logs", logs);
-        List<BaseMenuDO> list = baseMenuService.findAll();
-        modelMap.addAttribute("menuList", list);
         return new ModelAndView("/detail", "indexModel", modelMap);
     }
 
@@ -59,10 +56,10 @@ public class LogsInfoController {
      */
     @RequestMapping("/documents")
     public ModelAndView documents(ModelMap modelMap) {
+        super.getMenuList(modelMap);
         List<LogsBO> logsList = logsService.getLogsByQuery(null);
         modelMap.addAttribute("logsList", logsList);
         List<Map<String, String>> listContext = (List) context.getAttribute("list");
-        List<BaseMenuDO> list = baseMenuService.findAll();
         for (int i = 0; listContext != null && i < listContext.size(); i++) {
             for (LogsBO logs : logsList) {
                 if (logs.getId().equals(listContext.get(i).get("logId"))) {
@@ -70,8 +67,7 @@ public class LogsInfoController {
                 }
             }
         }
-        modelMap.addAttribute("menuList", list);
-        return new ModelAndView("/documents","indexModel",modelMap);
+        return new ModelAndView("/documents", "indexModel", modelMap);
     }
 
     /**
@@ -82,8 +78,7 @@ public class LogsInfoController {
      */
     @RequestMapping("/about")
     public ModelAndView about(ModelMap modelMap) {
-        List<BaseMenuDO> list = baseMenuService.findAll();
-        modelMap.addAttribute("menuList", list);
+        super.getMenuList(modelMap);
         return new ModelAndView("/about", "indexModel", modelMap);
     }
 }
