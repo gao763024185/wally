@@ -17,6 +17,12 @@
             <groupId>com.spb.wally</groupId>
             <artifactId>wally-service</artifactId>
         </dependency>
+        <!--调度中心jar包-->
+        <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>${xxl-job-version}</version>
+        </dependency>
     </dependencies>
 
     <build>

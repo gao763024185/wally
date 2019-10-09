@@ -74,4 +74,16 @@ public class LogsInfoController {
         return new ModelAndView("/documents","indexModel",modelMap);
     }
 
+    /**
+     * 进入about页面
+     *
+     * @param modelMap
+     * @return
+     */
+    @RequestMapping("/about")
+    public ModelAndView about(ModelMap modelMap) {
+        List<BaseMenuDO> list = baseMenuService.findAll();
+        modelMap.addAttribute("menuList", list);
+        return new ModelAndView("/about", "indexModel", modelMap);
+    }
 }

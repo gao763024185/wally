@@ -31,6 +31,7 @@ public class CounterAspect {
 
     /**
      * 利用需要使用切面的类方法的路径名称实现切点
+     * execution()
      */
     @Pointcut("execution(* com.spb.wally.controller.LogsInfoController.detail(..))")
     public void count() {
@@ -103,4 +104,7 @@ public class CounterAspect {
         }
         return result;
     }
+
+
+
 }
