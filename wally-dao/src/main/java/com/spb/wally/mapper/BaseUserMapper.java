@@ -22,4 +22,13 @@ public interface BaseUserMapper {
      * @return
      */
     List<BaseUserDO> findAll();
+
+
+
+    /**
+     * 登陆验证
+     * @param user
+     * @return
+     */
+    BaseUserDO loginValid(BaseUserDO user);
 }

@@ -45,8 +45,8 @@ public class IndexController {
      * @param pageNum
      * @return
      */
-    @RequestMapping("index")
-    public ModelAndView showTest(Model modelMap, @RequestParam(value = "pageNum", required = false) Integer pageNum) {
+    @RequestMapping("index1")
+    public ModelAndView showTest1(Model modelMap, @RequestParam(value = "pageNum", required = false) Integer pageNum) {
         if (pageNum == null) {
             pageNum = 1;
         }
@@ -76,8 +76,8 @@ public class IndexController {
      * @param pageNum
      * @return
      */
-    @RequestMapping("index1")
-    public ModelAndView showTest1(Model modelMap, @RequestParam(value = "pageNum", required = false) Integer pageNum, Integer pageSize) {
+    @RequestMapping("index")
+    public ModelAndView showTest(Model modelMap, @RequestParam(value = "pageNum", required = false) Integer pageNum, Integer pageSize) {
         if (pageNum == null) {
             pageNum = 1;
         }
@@ -86,13 +86,11 @@ public class IndexController {
         }
         modelMap.addAttribute("pageNum", pageNum);
         LogsQuery query = new LogsQuery();
-
         //最新笔记
         query.setOffset(0);
         query.setPageSize(8);
         List<LogsBO> noteLogsList = logsService.getLogsByQuery(query);
         modelMap.addAttribute("noteLogs", noteLogsList);
-
         //分页显示的笔记
         Pager<LogsBO> pager1;
         int count = logsMapper.logsCount(query);
@@ -105,8 +103,6 @@ public class IndexController {
             pager1 = new Pager<>(pageNum, pageSize, count, logsList);
         }
         modelMap.addAttribute("logsPageList", pager1);
-
-
         List<BaseMenuDO> list = baseMenuService.findAll();
         modelMap.addAttribute("menuList", list);
         List<BaseUserDO> user = userInfoService.findAll();

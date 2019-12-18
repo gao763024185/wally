@@ -22,4 +22,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     private BaseUserMapper baseUserMapper;
     @Override
     public List<BaseUserDO> findAll(){ return baseUserMapper.findAll();}
+
+
+    public BaseUserDO loginValid(BaseUserDO user){
+        return baseUserMapper.loginValid(user);
+    }
 }

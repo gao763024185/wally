@@ -17,4 +17,13 @@ public interface UserInfoService {
      * @return
      */
     List<BaseUserDO> findAll();
+
+
+    /**
+     * 验证用户登录
+     *
+     * @param user
+     * @return
+     */
+    BaseUserDO loginValid(BaseUserDO user);
 }

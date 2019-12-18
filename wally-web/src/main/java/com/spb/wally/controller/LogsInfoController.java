@@ -1,9 +1,7 @@
 package com.spb.wally.controller;
 
 import com.spb.wally.domain.bo.LogsBO;
-import com.spb.wally.domain.entity.BaseMenuDO;
 import com.spb.wally.domain.entity.LogsDO;
-import com.spb.wally.service.BaseMenuService;
 import com.spb.wally.service.LogsService;
 import com.spb.wally.tools.LogCount;
 import org.springframework.ui.ModelMap;
