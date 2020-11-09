@@ -80,15 +80,15 @@ public class AdminController extends BaseController {
         if (validateCode == null || validateCode == "") {
             return new JsonResp(JsonResp.Result_Fail, null, "验证码信息过期,请重新刷新输入", null);
         }
-        if (!(codeText.equalsIgnoreCase(validateCode))) {
-            return new JsonResp(JsonResp.Result_Fail, null, "验证码输入错误", null);
-        }
+//        if (!(codeText.equalsIgnoreCase(validateCode))) {
+//            return new JsonResp(JsonResp.Result_Fail, null, "验证码输入错误", null);
+//        }
         BaseUserDO baseUser = userInfoService.loginValid(user);
         if (baseUser == null) {
             return new JsonResp(JsonResp.Result_Fail, null, "用户名或密码输入错误", null);
         }
         Map<String, String> map = new HashMap<String, String>();
-        map.put("uid", String.valueOf(baseUser.getId()));
+//        map.put("uid", String.valueOf(baseUser.getId()));
         map.put("userName", baseUser.getUserName());
         //写入cookie
 //        UserAgent userAgent = new UserAgent();
@@ -97,9 +97,9 @@ public class AdminController extends BaseController {
 //        userAgent.setPassword(baseUser.getPassword());
         // Cookie
 
-        Cookie cookieUid = new Cookie("uid", String.valueOf(baseUser.getId()));
-        cookieUid.setMaxAge(24 * 60 * 60);
-        response.addCookie(cookieUid);
+//        Cookie cookieUid = new Cookie("uid", String.valueOf(baseUser.getId()));
+//        cookieUid.setMaxAge(24 * 60 * 60);
+//        response.addCookie(cookieUid);
 
         Cookie cookieUserName = new Cookie("userName", baseUser.getUserName());
         cookieUserName.setMaxAge(24 * 60 * 60);

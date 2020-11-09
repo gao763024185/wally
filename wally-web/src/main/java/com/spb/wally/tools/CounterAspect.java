@@ -85,7 +85,7 @@ public class CounterAspect {
                         } else {
                             count = new Integer(count.intValue() + 1);
                         }
-                        map1.put("count", String.valueOf(count));
+//                        map1.put("count", String.valueOf(count));
                     }
                 }
             }
